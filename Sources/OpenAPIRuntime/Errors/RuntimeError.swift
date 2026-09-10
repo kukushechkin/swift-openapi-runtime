@@ -119,8 +119,7 @@ internal enum RuntimeError: Error, CustomStringConvertible, LocalizedError, Pret
         case .missingRequiredMultipartFormDataContentType: return "Expected a 'multipart/form-data' content type."
         case .missingMultipartBoundaryContentTypeParameter:
             return "Missing 'boundary' parameter in the 'multipart/form-data' content type."
-        case .multipartBoundaryTooLong:
-            return "Multipart boundary is too long; RFC 2046 allows at most 70 bytes."
+        case .multipartBoundaryTooLong: return "Multipart boundary is too long; RFC 2046 allows at most 70 bytes."
         case .transportFailed: return "Transport threw an error."
         case .middlewareFailed(middlewareType: let type, _): return "Middleware of type '\(type)' threw an error."
         case .handlerFailed: return "User handler threw an error."
